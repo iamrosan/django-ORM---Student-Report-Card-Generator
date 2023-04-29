@@ -6,6 +6,11 @@ import random
 
 
 def seed_db(n=48) -> None:
+    '''
+    Each Deparment has 48 students.
+    This function randomly generates the student name, email, address using Faker module
+    And, also generates the unique student id for each students according to their respective department
+    '''
     department_objs = Department.objects.all()
     try:
 
@@ -35,6 +40,9 @@ def seed_db(n=48) -> None:
 
 
 def create_subject_marks():
+    '''
+    This function randomly generates the marks obtained for each subjects for all students from different department
+    '''
     try:
         student_obj = Student.objects.all()
         for std in student_obj:

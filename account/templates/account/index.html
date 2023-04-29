@@ -1,0 +1,16 @@
+{% extends 'account/base.html' %}
+
+{% block home%}
+<div class="container align-items-center">
+    <div class="card">
+
+      {% if messages %}
+      <ul class="messages text-center" style="width: 50%; margin: 0 auto">
+        {% for message in messages %}
+        <div class="alert alert-info" role="alert">{{ message }}</div>
+        {% endfor %}
+      </ul>
+      {% endif %}
+        <P>HELLO</P>
+</div>
+{% endblock home %}

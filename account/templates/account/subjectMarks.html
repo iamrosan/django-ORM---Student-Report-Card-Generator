@@ -1,0 +1,39 @@
+{% extends 'account/base.html' %}
+
+{% block home %}
+<div class="card text-center">
+    <!-- <div class="card-header"><h3>Student Report</h3></div> -->
+    <div class="card-body">
+      <h5 class="card-title">Student Name : {{student_name}}</h5>
+      <p class="card-text">Student ID : {{student_id}}</p>
+      <p class="card-text">Student Department : {{student_department}}</p>
+      <a href="#" class="btn btn-primary">View Result</a>
+    </div>
+    <div class="card-footer text-muted"></div>
+</div>
+
+<table class="table table-bordered w-5">
+    <thead >
+        <tr>
+          <th scope="col">S.N</th>
+          <th scope="col">Subject</th>
+          <th scope="col">Marks</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sub in queryset %}
+        <tr>
+          <td>{{ forloop.counter }}</td>          
+          <td> {{ sub.subject.subject_name }}</td>
+          <td> {{ sub.marks }}</td>
+          
+        </tr>
+        {% endfor %}
+      </tbody>
+</table>
+
+<div>
+   
+</div>
+
+{% endblock home %}
