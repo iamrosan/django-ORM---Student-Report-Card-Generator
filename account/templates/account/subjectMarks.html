@@ -7,9 +7,10 @@
       <h5 class="card-title">Student Name : {{student_name}}</h5>
       <p class="card-text">Student ID : {{student_id}}</p>
       <p class="card-text">Student Department : {{student_department}}</p>
-      <a href="#" class="btn btn-primary">View Result</a>
+      <a href="{% url 'result' name=student_name %}" class="btn btn-primary">View Result</a>
+      <!-- {% url 'index' %}?q={{ topic.name }} -->
     </div>
-    <div class="card-footer text-muted"></div>
+    <div class="card-footer text-muted font-weight-bold">Mark Sheet</div>
 </div>
 
 <table class="table table-bordered w-5">
