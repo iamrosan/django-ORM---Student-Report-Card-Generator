@@ -1,0 +1,37 @@
+{% extends 'account/base.html' %}
+
+{% block home %}
+<div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">Student Name: {{ student_name }}</h5>
+      <p class="card-text">Student ID: {{ student_id }}</p>
+      <p class="card-text">Student Department: {{ student_department }}</p>
+    </div>
+    <div class="card-footer text-muted">Total Marks Obtained: {{ result.total.total }}</div>
+    <div class="card-footer text-muted">Percentage: {{ result.percentage }}</div>
+    <div class="card-footer text-muted">Rank: {{ result.rank }}</div>
+    <div class="card-footer text-muted">Division: {{ result.division }}</div>
+    <div class="card-footer text-muted font-weight-bold">Mark Sheet</div>
+</div>
+
+<!-- Table displaying subjects and marks -->
+<table class="table table-bordered table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+          <th scope="col">S.N</th>
+          <th scope="col">Subject</th>
+          <th scope="col">Marks</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sub in queryset %}
+        <tr>
+          <td>{{ forloop.counter }}</td>          
+          <td>{{ sub.subject.subject_name }}</td>
+          <td>{{ sub.marks }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock home %}
