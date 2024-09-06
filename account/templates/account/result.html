@@ -1,6 +1,24 @@
 {% extends 'account/base.html' %}
 
 {% block home %}
-
+<div class="card text-center">
+    <!-- <div class="card-header"><h3>Student Report</h3></div> -->
+    <div class="card-body">
+      <h5 class="card-title">Student Name : {{student_name}}</h5>
+      <p class="card-text">Student ID : {{student_id}}</p>
+      <p class="card-text">Student Department : {{student_department}}</p>
+      
+      <!-- {% url 'index' %}?q={{ topic.name }} -->
+    </div>
+    <div class="card-footer text-muted">Total Marks Obtained : {{result.total.total}}</div>
+    <div class="card-footer text-muted">Percentage : {{result.percentage}}</div>
+    <div class="card-footer text-muted">Rank : {{result.rank}}</div>
+    <div class="card-footer text-muted">Division : {{result.division}}</div>
+    
+    <div class="card-body">
+      <a href="{% url 'download_pdf' student_name %}" class="btn btn-primary">Generate PDF</a>
+    </div>
+</div>
+{{total}}
 
 {% endblock home %}
